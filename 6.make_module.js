@@ -5,7 +5,14 @@ var ext = process.argv[3];
 // if dir and ext doesn't exit, throws err;
 // else, use dir to get a list of file names in directory
 module(dir, ext, function(err, data){
-  if(err)
+  if(err){
     throw err;
-  console.log(data);
+    console.log("There is an err!");
+  }
+  else{
+    data.forEach(function(item){
+      console.log(item);
+    });
+  }
+
 });
